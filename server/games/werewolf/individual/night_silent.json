@@ -1,0 +1,9 @@
+{
+  "id": "night_silent",
+  "when": {
+    "phase": "night",
+    "role": ["villager", "hunter", "idiot"]
+  },
+  "output": false,
+  "prompt": "individual/night_silent.md"
+}

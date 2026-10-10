@@ -1,0 +1,9 @@
+{
+  "id": "vote_cast",
+  "when": {
+    "phase": "vote",
+    "seat": "speaker"
+  },
+  "output": true,
+  "prompt": "individual/vote_cast.md"
+}

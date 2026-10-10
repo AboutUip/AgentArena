@@ -1,0 +1,106 @@
+{
+  "id": "werewolf",
+  "title": "狼人杀",
+  "modes": {
+    "yunu_bai": {
+      "file": "rules/modes/yunu_bai.json"
+    },
+    "wolf_king_guard": {
+      "file": "rules/modes/wolf_king_guard.json"
+    },
+    "nine_standard": {
+      "file": "rules/modes/nine_standard.json"
+    }
+  },
+  "drawers": [
+    {
+      "id": "base",
+      "file": "rules/base.json"
+    },
+    {
+      "id": "mode"
+    },
+    {
+      "id": "options",
+      "file": "options/catalog.json"
+    },
+    {
+      "id": "extensions",
+      "dir": "extensions"
+    },
+    {
+      "id": "individual",
+      "files": [
+        "individual/discuss_speak.json",
+        "individual/discuss_listen.json",
+        "individual/vote_cast.json",
+        "individual/vote_wait.json",
+        "individual/night_werewolf.json",
+        "individual/night_wolf_king.json",
+        "individual/night_seer.json",
+        "individual/night_witch.json",
+        "individual/night_guard.json",
+        "individual/night_silent.json",
+        "individual/shoot_hunter.json",
+        "individual/shoot_wolf_king.json",
+        "individual/shoot_wait.json"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "speak",
+      "title": "发言",
+      "description": "在讨论阶段说出一段发言",
+      "drawer": "discuss_speak"
+    },
+    {
+      "id": "listen",
+      "title": "旁听",
+      "description": "听别人发言，不产生输出",
+      "drawer": "discuss_listen"
+    },
+    {
+      "id": "vote",
+      "title": "投票",
+      "description": "投出一名尚未出局的玩家",
+      "drawer": "vote_cast"
+    },
+    {
+      "id": "kill",
+      "title": "击杀",
+      "description": "狼人夜间共同指定一名击杀目标",
+      "drawer": ["night_werewolf", "night_wolf_king"]
+    },
+    {
+      "id": "seer_check",
+      "title": "查验",
+      "description": "预言家查验一名玩家是好人还是狼人",
+      "drawer": "night_seer"
+    },
+    {
+      "id": "witch_potion",
+      "title": "用药",
+      "description": "女巫决定今夜是否使用解药或毒药",
+      "drawer": "night_witch"
+    },
+    {
+      "id": "guard",
+      "title": "守护",
+      "description": "守卫指定一名今夜免疫狼人击杀的玩家",
+      "drawer": "night_guard"
+    },
+    {
+      "id": "sleep",
+      "title": "闭眼",
+      "description": "今夜没有行动，保持闭眼",
+      "drawer": "night_silent"
+    },
+    {
+      "id": "shoot",
+      "title": "开枪",
+      "description": "出局时决定是否带走一名玩家",
+      "drawer": ["shoot_hunter", "shoot_wolf_king"]
+    }
+  ]
+}

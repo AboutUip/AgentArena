@@ -1,0 +1,10 @@
+{
+  "id": "move_red",
+  "when": {
+    "phase": "move",
+    "seat": "speaker",
+    "role": "red"
+  },
+  "output": true,
+  "prompt": "individual/move_red.md"
+}

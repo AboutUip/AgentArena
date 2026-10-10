@@ -1,0 +1,701 @@
+{
+  "roles": {
+    "seer": "预言家",
+    "witch": "女巫",
+    "hunter": "猎人",
+    "idiot": "白痴",
+    "villager": "平民",
+    "werewolf": "狼人",
+    "guard": "守卫",
+    "wolf_king": "狼王"
+  },
+  "groups": [
+    {
+      "id": "night",
+      "title": "夜间"
+    },
+    {
+      "id": "guard",
+      "title": "守卫"
+    },
+    {
+      "id": "hunter",
+      "title": "猎人"
+    },
+    {
+      "id": "wolf_king",
+      "title": "狼王"
+    },
+    {
+      "id": "idiot",
+      "title": "白痴"
+    },
+    {
+      "id": "day",
+      "title": "白天"
+    },
+    {
+      "id": "resolve",
+      "title": "结算"
+    }
+  ],
+  "items": [
+    {
+      "id": "witch_self_save",
+      "group": "night",
+      "title": "女巫自救",
+      "detail": "解药能不能对自己使用。",
+      "default": "never",
+      "choices": [
+        {
+          "id": "never",
+          "title": "不能",
+          "prompt": "options/witch_self_save_never.md"
+        },
+        {
+          "id": "first",
+          "title": "仅首夜",
+          "prompt": "options/witch_self_save_first.md"
+        },
+        {
+          "id": "always",
+          "title": "任何夜晚",
+          "prompt": "options/witch_self_save_always.md"
+        }
+      ]
+    },
+    {
+      "id": "witch_both",
+      "group": "night",
+      "title": "同一夜两瓶药",
+      "detail": "解药和毒药能不能在同一夜一起用。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/witch_both_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/witch_both_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "witch_target",
+      "group": "night",
+      "title": "女巫得知刀口",
+      "detail": "女巫行动前是否知道今夜被刀的人。",
+      "default": "told",
+      "choices": [
+        {
+          "id": "told",
+          "title": "告诉她",
+          "prompt": "options/witch_target_told.md"
+        },
+        {
+          "id": "hidden",
+          "title": "不告诉",
+          "prompt": "options/witch_target_hidden.md"
+        }
+      ]
+    },
+    {
+      "id": "seer_repeat",
+      "group": "night",
+      "title": "连续查验",
+      "detail": "预言家能否连续两夜查同一个人。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/seer_repeat_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/seer_repeat_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "seer_self",
+      "group": "night",
+      "title": "查验自己",
+      "detail": "预言家能否查验自己。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/seer_self_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/seer_self_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "wolf_empty",
+      "group": "night",
+      "title": "空刀",
+      "detail": "狼人这一夜能否谁也不杀。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "必须刀人",
+          "prompt": "options/wolf_empty_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以空刀",
+          "prompt": "options/wolf_empty_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "wolf_mate",
+      "group": "night",
+      "title": "刀队友",
+      "detail": "狼人能否击杀自己的队友。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/wolf_mate_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/wolf_mate_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "wolf_split",
+      "group": "night",
+      "title": "狼刀分歧",
+      "detail": "狼人没有选中同一个目标时如何处理。",
+      "default": "unanimous",
+      "choices": [
+        {
+          "id": "unanimous",
+          "title": "必须一致",
+          "prompt": "options/wolf_split_unanimous.md"
+        },
+        {
+          "id": "majority",
+          "title": "多数决",
+          "prompt": "options/wolf_split_majority.md"
+        },
+        {
+          "id": "wolf_king",
+          "title": "狼王决定",
+          "prompt": "options/wolf_split_wolf_king.md",
+          "modes": [
+            "wolf_king_guard"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guard_repeat",
+      "group": "guard",
+      "title": "连续守护",
+      "detail": "守卫能否连续两夜守同一个人。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/guard_repeat_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/guard_repeat_allow.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "guard_self",
+      "group": "guard",
+      "title": "守护自己",
+      "detail": "守卫能否守护自己。",
+      "default": "allow",
+      "choices": [
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/guard_self_allow.md"
+        },
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/guard_self_forbid.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "milk",
+      "group": "guard",
+      "title": "同守同救",
+      "detail": "守卫和女巫同一夜救了同一个被刀的人时，这个人是否死亡。",
+      "default": "on",
+      "choices": [
+        {
+          "id": "on",
+          "title": "仍然死亡",
+          "prompt": "options/milk_on.md"
+        },
+        {
+          "id": "off",
+          "title": "存活",
+          "prompt": "options/milk_off.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "hunter_shots",
+      "group": "hunter",
+      "title": "子弹",
+      "detail": "猎人出局后一共可以开几枪。",
+      "default": "1",
+      "choices": [
+        {
+          "id": "0",
+          "title": "不能开枪",
+          "prompt": "options/hunter_shots_0.md"
+        },
+        {
+          "id": "1",
+          "title": "1 发",
+          "prompt": "options/hunter_shots_1.md"
+        },
+        {
+          "id": "2",
+          "title": "2 发",
+          "prompt": "options/hunter_shots_2.md"
+        }
+      ]
+    },
+    {
+      "id": "hunter_poison",
+      "group": "hunter",
+      "title": "被毒开枪",
+      "detail": "猎人被女巫毒死时能否开枪。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/hunter_poison_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/hunter_poison_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "hunter_exile",
+      "group": "hunter",
+      "title": "被放逐开枪",
+      "detail": "猎人被投票放逐时能否开枪。",
+      "default": "allow",
+      "choices": [
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/hunter_exile_allow.md"
+        },
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/hunter_exile_forbid.md"
+        }
+      ]
+    },
+    {
+      "id": "hunter_night",
+      "group": "hunter",
+      "title": "被刀开枪",
+      "detail": "猎人被狼人击杀时能否开枪。",
+      "default": "allow",
+      "choices": [
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/hunter_night_allow.md"
+        },
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/hunter_night_forbid.md"
+        }
+      ]
+    },
+    {
+      "id": "hunter_chain",
+      "group": "hunter",
+      "title": "被枪带走后再开枪",
+      "detail": "猎人被别人开枪带走时能否再开枪。",
+      "default": "allow",
+      "choices": [
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/hunter_chain_allow.md"
+        },
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/hunter_chain_forbid.md"
+        }
+      ]
+    },
+    {
+      "id": "king_shots",
+      "group": "wolf_king",
+      "title": "子弹",
+      "detail": "狼王出局后可以开几枪。",
+      "default": "1",
+      "choices": [
+        {
+          "id": "0",
+          "title": "不能开枪",
+          "prompt": "options/king_shots_0.md"
+        },
+        {
+          "id": "1",
+          "title": "1 发",
+          "prompt": "options/king_shots_1.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "king_poison",
+      "group": "wolf_king",
+      "title": "被毒开枪",
+      "detail": "狼王被女巫毒死时能否开枪。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/king_poison_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/king_poison_allow.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "king_hunter",
+      "group": "wolf_king",
+      "title": "被猎人带走",
+      "detail": "狼王被猎人开枪带走时能否开枪。",
+      "default": "allow",
+      "choices": [
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/king_hunter_allow.md"
+        },
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/king_hunter_forbid.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "seer_king",
+      "group": "wolf_king",
+      "title": "预言家眼中的狼王",
+      "detail": "预言家查验狼王时看到的结果。",
+      "default": "wolf",
+      "choices": [
+        {
+          "id": "wolf",
+          "title": "狼人",
+          "prompt": "options/seer_king_wolf.md"
+        },
+        {
+          "id": "gold",
+          "title": "好人",
+          "prompt": "options/seer_king_gold.md"
+        }
+      ],
+      "modes": [
+        "wolf_king_guard"
+      ]
+    },
+    {
+      "id": "idiot_exile",
+      "group": "idiot",
+      "title": "被放逐",
+      "detail": "白痴被投票放逐时是留在场上，还是直接出局。",
+      "default": "stay",
+      "choices": [
+        {
+          "id": "stay",
+          "title": "亮明并留下",
+          "prompt": "options/idiot_exile_stay.md"
+        },
+        {
+          "id": "out",
+          "title": "出局",
+          "prompt": "options/idiot_exile_out.md"
+        }
+      ],
+      "modes": [
+        "yunu_bai"
+      ]
+    },
+    {
+      "id": "idiot_vote",
+      "group": "idiot",
+      "title": "留下后的投票",
+      "detail": "白痴亮明身份并留下之后还能不能投票。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/idiot_vote_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/idiot_vote_allow.md"
+        }
+      ],
+      "modes": [
+        "yunu_bai"
+      ]
+    },
+    {
+      "id": "idiot_rexile",
+      "group": "idiot",
+      "title": "再次放逐",
+      "detail": "白痴留下之后还能不能被投票放逐。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/idiot_rexile_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/idiot_rexile_allow.md"
+        }
+      ],
+      "modes": [
+        "yunu_bai"
+      ]
+    },
+    {
+      "id": "last_words",
+      "group": "day",
+      "title": "遗言",
+      "detail": "哪些出局方式可以在离开前再说一段。",
+      "default": "off",
+      "choices": [
+        {
+          "id": "off",
+          "title": "关闭",
+          "prompt": "options/last_words_off.md"
+        },
+        {
+          "id": "exile",
+          "title": "仅放逐",
+          "prompt": "options/last_words_exile.md"
+        },
+        {
+          "id": "night",
+          "title": "仅夜死",
+          "prompt": "options/last_words_night.md"
+        },
+        {
+          "id": "both",
+          "title": "放逐和夜死",
+          "prompt": "options/last_words_both.md"
+        }
+      ]
+    },
+    {
+      "id": "explode",
+      "group": "day",
+      "title": "狼人自爆",
+      "detail": "狼人能否在白天自爆并直接进入夜晚。",
+      "default": "own_turn",
+      "choices": [
+        {
+          "id": "off",
+          "title": "不能",
+          "prompt": "options/explode_off.md"
+        },
+        {
+          "id": "own_turn",
+          "title": "自己发言时",
+          "prompt": "options/explode_own_turn.md"
+        },
+        {
+          "id": "anytime",
+          "title": "讨论中随时",
+          "prompt": "options/explode_anytime.md"
+        }
+      ]
+    },
+    {
+      "id": "speak_order",
+      "group": "day",
+      "title": "发言顺序",
+      "detail": "白天每人一段发言从谁开始。",
+      "default": "seat",
+      "choices": [
+        {
+          "id": "seat",
+          "title": "座位号升序",
+          "prompt": "options/speak_order_seat.md"
+        },
+        {
+          "id": "random",
+          "title": "随机起点",
+          "prompt": "options/speak_order_random.md"
+        }
+      ]
+    },
+    {
+      "id": "vote_tie",
+      "group": "day",
+      "title": "平票",
+      "detail": "最高票不止一人时如何处理。",
+      "default": "none",
+      "choices": [
+        {
+          "id": "none",
+          "title": "无人出局",
+          "prompt": "options/vote_tie_none.md"
+        },
+        {
+          "id": "revote",
+          "title": "再投一次",
+          "prompt": "options/vote_tie_revote.md"
+        },
+        {
+          "id": "pk",
+          "title": "加赛发言后再投",
+          "prompt": "options/vote_tie_pk.md"
+        }
+      ]
+    },
+    {
+      "id": "vote_self",
+      "group": "day",
+      "title": "投自己",
+      "detail": "投票时能否投自己。",
+      "default": "allow",
+      "choices": [
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/vote_self_allow.md"
+        },
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/vote_self_forbid.md"
+        }
+      ]
+    },
+    {
+      "id": "vote_abstain",
+      "group": "day",
+      "title": "弃票",
+      "detail": "投票时能否不投任何人。",
+      "default": "forbid",
+      "choices": [
+        {
+          "id": "forbid",
+          "title": "不能",
+          "prompt": "options/vote_abstain_forbid.md"
+        },
+        {
+          "id": "allow",
+          "title": "可以",
+          "prompt": "options/vote_abstain_allow.md"
+        }
+      ]
+    },
+    {
+      "id": "death_cause",
+      "group": "resolve",
+      "title": "死因",
+      "detail": "公布出局时是否说明死因。",
+      "default": "hidden",
+      "choices": [
+        {
+          "id": "hidden",
+          "title": "只公布座位",
+          "prompt": "options/death_cause_hidden.md"
+        },
+        {
+          "id": "public",
+          "title": "公布死因",
+          "prompt": "options/death_cause_public.md"
+        }
+      ]
+    },
+    {
+      "id": "win_check",
+      "group": "resolve",
+      "title": "胜负结算",
+      "detail": "什么时候检查哪一方已经获胜。",
+      "default": "step",
+      "choices": [
+        {
+          "id": "step",
+          "title": "每次出局后",
+          "prompt": "options/win_check_step.md"
+        },
+        {
+          "id": "phase",
+          "title": "夜晚和投票结束后",
+          "prompt": "options/win_check_phase.md"
+        }
+      ]
+    }
+  ]
+}

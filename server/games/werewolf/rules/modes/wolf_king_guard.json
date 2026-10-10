@@ -1,0 +1,18 @@
+{
+  "id": "wolf_king_guard",
+  "title": "狼王守卫",
+  "players": 12,
+  "win": "edge",
+  "winTitle": "屠边",
+  "nightOrder": ["guard", "werewolf", "witch", "seer"],
+  "roster": [
+    {"role": "seer", "count": 1},
+    {"role": "witch", "count": 1},
+    {"role": "hunter", "count": 1},
+    {"role": "guard", "count": 1},
+    {"role": "villager", "count": 4},
+    {"role": "werewolf", "count": 3},
+    {"role": "wolf_king", "count": 1}
+  ],
+  "prompt": "rules/modes/wolf_king_guard.md"
+}

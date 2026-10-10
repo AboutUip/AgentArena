@@ -1,0 +1,10 @@
+{
+  "id": "night_werewolf",
+  "when": {
+    "phase": "night",
+    "seat": "speaker",
+    "role": "werewolf"
+  },
+  "output": true,
+  "prompt": "individual/night_werewolf.md"
+}

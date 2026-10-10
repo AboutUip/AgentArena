@@ -1,0 +1,10 @@
+{
+  "id": "shoot_hunter",
+  "when": {
+    "phase": "shoot",
+    "seat": "speaker",
+    "role": "hunter"
+  },
+  "output": true,
+  "prompt": "individual/shoot_hunter.md"
+}

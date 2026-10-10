@@ -1,0 +1,9 @@
+{
+  "id": "shoot_wait",
+  "when": {
+    "phase": "shoot",
+    "seat": "other"
+  },
+  "output": false,
+  "prompt": "individual/shoot_wait.md"
+}

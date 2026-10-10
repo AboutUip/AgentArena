@@ -1,0 +1,11 @@
+{
+  "id": "night_guard",
+  "when": {
+    "mode": "wolf_king_guard",
+    "phase": "night",
+    "seat": "speaker",
+    "role": "guard"
+  },
+  "output": true,
+  "prompt": "individual/night_guard.md"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "night_seer",
+  "when": {
+    "phase": "night",
+    "seat": "speaker",
+    "role": "seer"
+  },
+  "output": true,
+  "prompt": "individual/night_seer.md"
+}

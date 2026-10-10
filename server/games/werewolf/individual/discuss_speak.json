@@ -1,0 +1,9 @@
+{
+  "id": "discuss_speak",
+  "when": {
+    "phase": "discuss",
+    "seat": "speaker"
+  },
+  "output": true,
+  "prompt": "individual/discuss_speak.md"
+}

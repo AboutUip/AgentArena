@@ -1,0 +1,16 @@
+{
+  "id": "nine_standard",
+  "title": "九人标准",
+  "players": 9,
+  "win": "city",
+  "winTitle": "屠城",
+  "nightOrder": ["werewolf", "witch", "seer"],
+  "roster": [
+    {"role": "seer", "count": 1},
+    {"role": "witch", "count": 1},
+    {"role": "hunter", "count": 1},
+    {"role": "villager", "count": 3},
+    {"role": "werewolf", "count": 3}
+  ],
+  "prompt": "rules/modes/nine_standard.md"
+}

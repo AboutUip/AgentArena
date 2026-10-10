@@ -1,0 +1,9 @@
+{
+  "id": "discuss_listen",
+  "when": {
+    "phase": "discuss",
+    "seat": "other"
+  },
+  "output": false,
+  "prompt": "individual/discuss_listen.md"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "xiangqi",
+  "title": "象棋",
+  "modes": {
+    "standard": {
+      "file": "rules/modes/standard.json"
+    }
+  },
+  "drawers": [
+    {
+      "id": "base",
+      "file": "rules/base.json"
+    },
+    {
+      "id": "mode"
+    },
+    {
+      "id": "options",
+      "file": "options/catalog.json"
+    },
+    {
+      "id": "extensions",
+      "dir": "extensions"
+    },
+    {
+      "id": "individual",
+      "files": [
+        "individual/move_red.json",
+        "individual/move_black.json"
+      ]
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "move",
+      "title": "走子",
+      "description": "从合法着法里走出一步",
+      "drawer": ["move_red", "move_black"]
+    }
+  ]
+}

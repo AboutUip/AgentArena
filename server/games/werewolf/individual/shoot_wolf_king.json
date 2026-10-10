@@ -1,0 +1,11 @@
+{
+  "id": "shoot_wolf_king",
+  "when": {
+    "mode": "wolf_king_guard",
+    "phase": "shoot",
+    "seat": "speaker",
+    "role": "wolf_king"
+  },
+  "output": true,
+  "prompt": "individual/shoot_wolf_king.md"
+}

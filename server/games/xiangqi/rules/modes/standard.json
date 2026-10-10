@@ -1,0 +1,13 @@
+{
+  "id": "standard",
+  "title": "标准",
+  "players": 2,
+  "win": "mate",
+  "winTitle": "将死",
+  "nightOrder": [],
+  "roster": [
+    {"role": "red", "count": 1},
+    {"role": "black", "count": 1}
+  ],
+  "prompt": "rules/modes/standard.md"
+}

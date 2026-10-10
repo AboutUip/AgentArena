@@ -1,0 +1,10 @@
+{
+  "id": "night_witch",
+  "when": {
+    "phase": "night",
+    "seat": "speaker",
+    "role": "witch"
+  },
+  "output": true,
+  "prompt": "individual/night_witch.md"
+}

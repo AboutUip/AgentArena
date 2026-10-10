@@ -1,0 +1,9 @@
+{
+  "id": "vote_wait",
+  "when": {
+    "phase": "vote",
+    "seat": "other"
+  },
+  "output": false,
+  "prompt": "individual/vote_wait.md"
+}
